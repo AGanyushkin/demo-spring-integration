@@ -1,0 +1,57 @@
+
+### Send new plant entries for processing
+# Each image should be processed and after plant entry will be saved
+# Plants without images should be skipped
+# Processing will be executed in asynchronous flow and queue in input
+
+### plant 1
+POST http://localhost:8080/plant
+Content-Type: application/json
+
+{
+  "plantId": 1,
+  "plantImages": [
+    "https://fakeimg.pl/100/",
+    "https://fakeimg.pl/200/",
+    "https://fakeimg.pl/300/"
+  ]
+}
+
+### plant 2
+POST http://localhost:8080/plant
+Content-Type: application/json
+
+{
+  "plantId": "",
+  "plantImages": []
+}
+
+### plant 3
+POST http://localhost:8080/plant
+Content-Type: application/json
+
+{
+  "plantId": 3,
+  "plantImages": [
+    "https://fakeimg.pl/100/",
+    "https://fakeimg.pl/200/",
+    "https://fakeimg.pl/300/"
+  ]
+}
+
+### plant 4
+POST http://localhost:8080/plant
+Content-Type: application/json
+
+{
+  "plantId": 4,
+  "plantImages": [
+    "https://fakeimg.pl/100/",
+    "https://fakeimg.pl/200/",
+    "https://fakeimg.pl/300/"
+  ]
+}
+
+### Get plant status
+GET http://localhost:8080/plant/123
+
